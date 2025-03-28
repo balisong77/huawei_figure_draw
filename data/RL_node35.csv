@@ -1,0 +1,2 @@
+tag,avg_throughput_pkts,avg_lat_ns,avg_timeout_pkts,timeout_rate
+RL_sim,3407486,133683,270,7.94126E-05
