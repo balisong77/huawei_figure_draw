@@ -12,7 +12,7 @@ def add_suffix_small(value):
 
 styles = get_style_sheet_upon_base("draw-baseline.mplstyle")
 
-targets =  ["32", "48", "64", "96", "128", "192", "256", "BF", "BF_notimeout","GA_real", "GA_predict"]
+targets =  ["32", "48", "64", "96", "128", "192", "256", "BF", "BF_notimeout","GA_real", "SGD_predict", "GA_predict"]
 
 
 ## data 
@@ -23,7 +23,10 @@ df = read_dfs_node24()
 print(df)
 
 filtered_df = df[df['tag'].isin(targets)]
-
+sorted_df = pd.DataFrame()
+for tag in targets:
+    sorted_df = pd.concat([sorted_df, filtered_df[filtered_df['tag'] == tag]], axis=0)
+filtered_df = sorted_df
 
 print(filtered_df)
 
